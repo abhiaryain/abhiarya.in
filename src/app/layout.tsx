@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Container } from "@/components/container/container";
+import { OneKo } from "@/components/oneko/oneko";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { Fade } from "@/components/ui-custom/fade";
 import { cn } from "@/lib/utils";
@@ -46,6 +47,7 @@ export default function RootLayout({
           <Container>
             <Fade>{children}</Fade>
           </Container>
+          <OneKo />
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
