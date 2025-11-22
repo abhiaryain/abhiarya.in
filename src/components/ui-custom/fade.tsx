@@ -42,8 +42,6 @@ export function FadeItem({
         hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
         show: { opacity: 1, y: 0, filter: "blur(0px)" },
       }}
-      initial="hidden"
-      animate="show"
       data-slot="fade-item"
       // Allows the parent component to pass custom props that override the default motion animation settings.
       {...props}
