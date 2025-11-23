@@ -15,13 +15,16 @@ export const PROJECT_DATA = [
   {
     name: "Currunt",
     description:
-      "Learnings is a collection of tutorials and blog posts, designed to capture my ongoing learning journey and share practical insights with others.",
+      "A unified AI powerhouse for creation, design, and automation — transforming ideas into polished results within seconds.",
     url: "https://currunt.in",
     icon: "currunt",
     github: "https://github.com/curruntin/currunt",
     tags: [
       { name: "Next", icon: "next", url: "https://nextjs.org" },
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },
+      { name: "Bun", icon: "bun", url: "https://bun.sh" },
+      { name: "hono", icon: "hono", url: "https://honojs.dev" },
+      { name: "AI SDK", icon: "ai-sdk", url: "https://ai-sdk.dev" },
     ],
     featured: true,
   },

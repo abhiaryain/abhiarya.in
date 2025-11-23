@@ -55,6 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
         ...PERSONAL_DATA.emails,
         ...EXPERIENCE_DATA.map((experience) => experience.company),
         ...EXPERIENCE_DATA.map((experience) => experience.position),
+        ...EXPERIENCE_DATA.map((experience) => experience.shortPosition),
         ...SOCIAL_DATA.map((social) => social.username),
         ...PROJECT_DATA.map((project) => project.name),
       ]),
@@ -69,10 +70,11 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       emails: PERSONAL_DATA.emails,
       phoneNumbers: PERSONAL_DATA.phones,
-      countryName: "India",
+      countryName: PERSONAL_DATA.address.country,
       locale: "en_IN",
       ttl: 60 * 60 * 24,
     },
+    // TODO: Add twitter support
     twitter: {
       siteId: "1859480388193701888",
       creator: `@${PERSONAL_DATA.twitter}`,
@@ -87,7 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased`,
-          "bg-background min-h-screen font-sans",
+          "min-h-screen bg-background font-sans",
         )}
       >
         <ThemeProvider

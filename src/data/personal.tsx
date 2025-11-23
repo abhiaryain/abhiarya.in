@@ -110,7 +110,7 @@ export const PERSONAL_DATA = {
     "self.abhiarya@gmail.com",
   ],
   bio: `Software engineer passionate about building high-quality products and contributing to open-source.`,
-  summary: `Software engineer experienced in building scalable backend systems using TypeScript, Node, Redis, Kafka, Docker, AWS, and more. Currently building Currunt, while also contributing to open-source projects. When I'm not coding, I enjoy writing articles to share what I learn.`,
+  summary: `Software engineer experienced in building scalable backend systems using TypeScript, Node, Redis, Kafka, Docker, AWS, and more. Currently building Currunt, while also contributing to open-source projects. When I'm not coding, I enjoy writing articles to share about my learnings.`,
   about: (
     <span>
       I&apos;m a software engineer experienced in building scalable backend

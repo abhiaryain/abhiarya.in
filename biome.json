@@ -30,10 +30,17 @@
         "useKeyWithClickEvents": "off",
         "useFocusableInteractive": "off",
         "noRedundantRoles": "off",
-        "useAriaPropsForRole": "off"
+        "useAriaPropsForRole": "off",
+        "useButtonType": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "warn"
+        }
       }
     },
     "domains": {

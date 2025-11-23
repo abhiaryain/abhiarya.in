@@ -14,38 +14,38 @@ export function ErrorPage({ status, message, btn }: ErrorProps) {
   return (
     <Fade
       className={cn(
-        "flex flex-col items-center justify-center min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-8rem)] w-full flex-1 p-4 text-center",
+        "flex flex-col items-center justify-center p-4",
+        "min-h-[calc(100vh-2rem)] w-full sm:min-h-[calc(100vh-8rem)]",
+        "text-center",
       )}
     >
       <FadeItem>
         <h1
           className={cn(
-            "text-7xl font-extrabold sm:text-9xl",
-            status >= 500 ? "text-destructive" : "",
+            "font-extrabold text-7xl sm:text-9xl",
+            status >= 500 && "text-destructive",
           )}
         >
           {status}
         </h1>
       </FadeItem>
       <FadeItem>
-        <p className={cn("text-muted-foreground mt-2 mb-6 text-lg")}>
-          {message}
-        </p>
+        <p className="mt-2 mb-6 text-lg text-muted-foreground">{message}</p>
       </FadeItem>
       <FadeItem>
-        <Link href="/" passHref>
-          <Button
-            asChild
-            className={cn(
-              "bg-accent text-accent-foreground hover:bg-accent/80 flex items-center justify-center gap-2",
-            )}
-            aria-label="go-to-home"
-          >
-            <span>
-              {btn} <ArrowRight />
-            </span>
-          </Button>
-        </Link>
+        <Button
+          asChild
+          className={cn(
+            "flex items-center justify-center gap-2",
+            "bg-accent hover:bg-accent/80",
+            "text-accent-foreground",
+          )}
+          aria-label="go-to-home"
+        >
+          <Link href="/">
+            {btn} <ArrowRight />
+          </Link>
+        </Button>
       </FadeItem>
     </Fade>
   );

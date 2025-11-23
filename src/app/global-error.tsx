@@ -9,7 +9,6 @@ import { Container } from "@/components/container/container";
 import { ErrorPage } from "@/components/error/error-page";
 import { OneKo } from "@/components/oneko/oneko";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
-import { Fade } from "@/components/ui-custom/fade";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -28,7 +27,7 @@ export default function GlobalError() {
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased`,
-          "bg-background min-h-screen font-sans",
+          "min-h-screen bg-background font-sans",
         )}
       >
         <ThemeProvider
@@ -38,13 +37,11 @@ export default function GlobalError() {
           disableTransitionOnChange
         >
           <Container>
-            <Fade>
-              <ErrorPage
-                status={500}
-                message="We’re sorry, something went wrong on our end."
-                btn="Go Home"
-              />
-            </Fade>
+            <ErrorPage
+              status={500}
+              message="We’re sorry, something went wrong on our end."
+              btn="Go Home"
+            />
           </Container>
           <OneKo />
         </ThemeProvider>

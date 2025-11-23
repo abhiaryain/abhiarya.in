@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
 
 const spriteSets = {
   idle: [[-3, -3]],
@@ -249,9 +248,7 @@ export function OneKo({
     <div
       aria-hidden="true"
       ref={oneRef}
-      className={cn(
-        "pointer-events-none fixed z-2147483647 hidden size-8 sm:block",
-      )}
+      className="pointer-events-none fixed z-2147483647 hidden size-8 sm:block"
       style={{
         imageRendering: "pixelated",
         backgroundImage: `url(${file})`,

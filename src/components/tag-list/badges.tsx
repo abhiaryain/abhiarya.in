@@ -21,18 +21,22 @@ export function Badges({
       target="_blank"
       rel="noopener"
       onClick={() => track(`${name}_badge_clicked`)}
-      className={cn("focus-visible:outline-none group")}
+      className="group focus-visible:outline-none"
     >
       <Badge
         variant={"outline"}
         className={cn(
-          "bg-accent/50 hover:bg-accent transition-[background] border-muted-foreground rounded-sm border-dashed [&>svg]:size-3",
-          "group-focus-visible:ring-ring group-focus-visible:ring-2 group-focus-visible:border-transparent",
+          "bg-accent/50 hover:bg-accent",
+          "rounded-sm transition-[background]",
+          "border-muted-foreground border-dashed [&>svg]:size-3",
+          "group-focus-visible:border-transparent group-focus-visible:ring-2 group-focus-visible:ring-ring/50",
           className,
         )}
       >
-        <Icon className={cn("mr-0.5")} /> {name}
+        <Icon className="mr-0.5" /> {name}
       </Badge>
     </Link>
   );
 }
+
+// group-hover:saturate-100 sm:saturate-0 - on icon

@@ -18,6 +18,4 @@
 
 <!-- If this PR closes any issues, use the keyword 'closes' or 'fixes' followed by the issue number. -->
 
-## Fixes
-
-<!-- issue number -->
+## Fixes <!-- issue number -->

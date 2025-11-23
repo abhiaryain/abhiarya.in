@@ -24,7 +24,7 @@ bun install
 
 ### 3. Environment Setup
 
-Copy the `.env.example` file to `.env` using this command, `cp .env.example .env` and fill in these values.
+Copy the `.env.example` file to `.env` using `cp .env.example .env` and fill in the required variables..
 
 <details>
 <summary>How to setup github token?</summary>
