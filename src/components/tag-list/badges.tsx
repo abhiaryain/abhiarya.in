@@ -16,27 +16,27 @@ export function Badges({
 }: Tag & ComponentProps<typeof Badge>) {
   const Icon = icons[icon];
   return (
-    <Link
-      href={url}
-      target="_blank"
-      rel="noopener"
-      onClick={() => track(`${name}_badge_clicked`)}
-      className="group focus-visible:outline-none"
+    <Badge
+      asChild
+      variant={"outline"}
+      className={cn(
+        "group",
+        "text-muted-foreground",
+        "bg-accent/50 hover:bg-accent",
+        "rounded-sm transition-[background]",
+        "border-muted-foreground border-dashed [&>svg]:size-3",
+        "focus-visible:border-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+        className,
+      )}
     >
-      <Badge
-        variant={"outline"}
-        className={cn(
-          "bg-accent/50 hover:bg-accent",
-          "rounded-sm transition-[background]",
-          "border-muted-foreground border-dashed [&>svg]:size-3",
-          "group-focus-visible:border-transparent group-focus-visible:ring-2 group-focus-visible:ring-ring/50",
-          className,
-        )}
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener"
+        onClick={() => track(`${name}_badge_clicked`)}
       >
         <Icon className="mr-0.5" /> {name}
-      </Badge>
-    </Link>
+      </Link>
+    </Badge>
   );
 }
-
-// group-hover:saturate-100 sm:saturate-0 - on icon

@@ -7,7 +7,6 @@ export default function RootError() {
     <ErrorPage
       status={500}
       message="We’re sorry, something went wrong on our end."
-      btn="Go Home"
     />
   );
 }

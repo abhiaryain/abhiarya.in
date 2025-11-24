@@ -26,7 +26,7 @@ export function SectionHeader({
   return (
     <div
       data-slot="section-header"
-      className={cn("flex items-center justify-between", className)}
+      className={cn("flex items-center justify-between gap-4", className)}
       {...props}
     >
       {children}
@@ -42,7 +42,7 @@ export function SectionContent({
   return (
     <div
       data-slot="section-content"
-      className={cn("flex flex-col gap-3", className)}
+      className={cn("flex flex-col justify-center gap-3", className)}
       {...props}
     >
       {children}
@@ -59,9 +59,9 @@ export function SectionTitle({
     <h2
       data-slot="section-title"
       className={cn(
-        "flex flex-row items-center gap-2",
-        "font-semibold",
-        "**:[svg]:size-4.5",
+        "flex items-center justify-center gap-2",
+        "whitespace-nowrap font-semibold",
+        "[&_svg]:size-4 [&_svg]:shrink-0",
         className,
       )}
       {...props}
@@ -71,14 +71,14 @@ export function SectionTitle({
   );
 }
 
-export function SectionLinkTitle({
+export function SectionLink({
   children,
   className,
   ...props
 }: React.ComponentProps<typeof Link>) {
   return (
     <Link
-      data-slot="section-link-title"
+      data-slot="section-link"
       className={cn(
         "flex flex-row items-center gap-2",
         "hover:text-blue-400",

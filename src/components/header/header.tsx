@@ -14,7 +14,7 @@ export function Header() {
     <div className="flex items-center justify-between gap-4">
       <div className="flex-1 space-y-1.5">
         <FadeItem className="flex sm:hidden">
-          <AvatarComponent className="size-36" />
+          <AvatarComponent />
         </FadeItem>
         <FadeItem>
           <h1 className="whitespace-nowrap font-bold text-2xl">
@@ -22,12 +22,7 @@ export function Header() {
           </h1>
         </FadeItem>
         <FadeItem>
-          <p
-            className={cn(
-              "sm:max-w-md",
-              "text-pretty font-mono text-muted-foreground text-sm",
-            )}
-          >
+          <p className="text-pretty font-mono text-muted-foreground text-sm sm:max-w-md">
             {PERSONAL_DATA.bio}
           </p>
         </FadeItem>
@@ -41,9 +36,9 @@ export function Header() {
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                 "focus-visible:ring-offset-4 focus-visible:ring-offset-background",
               )}
-              target="_blank"
               href={PERSONAL_DATA.address.url}
               rel="noopener"
+              target="_blank"
               onClick={() => track("header_address_clicked")}
             >
               <MapPin className="size-3" />
@@ -56,7 +51,7 @@ export function Header() {
         </FadeItem>
       </div>
       <FadeItem className="hidden sm:flex">
-        <AvatarComponent className="size-36" />
+        <AvatarComponent />
       </FadeItem>
     </div>
   );

@@ -17,7 +17,7 @@ export function Contact() {
       </SectionHeader>
       <SectionContent className="gap-0">
         <FadeItem>
-          <p className="text-muted-foreground leading-6">
+          <p className="text-muted-foreground text-sm leading-6">
             Feel free to reach out if you want to collaborate on a project, have
             a question, or just want to connect.
           </p>

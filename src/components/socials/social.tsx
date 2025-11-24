@@ -31,15 +31,17 @@ export function Social() {
                     "rounded-md transition-colors",
                     "text-muted-foreground hover:text-accent-foreground",
                     "hover:bg-accent",
-                    "border border-input",
+                    "border border-border",
                     "whitespace-nowrap font-medium text-sm",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                     "[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0",
+
                     social.withText ? "px-2" : "size-8",
                   )}
                   onClick={() => track(`social_${social.name}_clicked`)}
                 >
                   <Icon
+                    // Github icon is a bit smaller than the others so we need to make it a bit smaller
                     className={social.icon === "github" ? "size-5" : "size-4"}
                   />
                   <span

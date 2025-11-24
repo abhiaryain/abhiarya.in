@@ -74,7 +74,6 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "en_IN",
       ttl: 60 * 60 * 24,
     },
-    // TODO: Add twitter support
     twitter: {
       siteId: "1859480388193701888",
       creator: `@${PERSONAL_DATA.twitter}`,

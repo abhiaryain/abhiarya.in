@@ -112,13 +112,13 @@ export const PERSONAL_DATA = {
   bio: `Software engineer passionate about building high-quality products and contributing to open-source.`,
   summary: `Software engineer experienced in building scalable backend systems using TypeScript, Node, Redis, Kafka, Docker, AWS, and more. Currently building Currunt, while also contributing to open-source projects. When I'm not coding, I enjoy writing articles to share about my learnings.`,
   about: (
-    <span>
+    <p className="font-mono text-muted-foreground text-sm leading-6">
       I&apos;m a software engineer experienced in building scalable backend
       systems using <TagList tags={tags} /> and more. Currently, I&apos;m
-      building <TagList tags={currentProjects} showAndBeforeLast /> while
-      contributing to open-source projects. When I&apos;m not writing code,
-      you&apos;ll find me writing articles about my <TagList tags={learnings} />
-    </span>
+      building <TagList tags={currentProjects} /> while contributing to
+      open-source projects. When I&apos;m not writing code, you&apos;ll find me
+      writing articles about my <TagList tags={learnings} />
+    </p>
   ),
   address: {
     state: "New Delhi",

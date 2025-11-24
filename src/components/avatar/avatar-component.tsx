@@ -1,15 +1,10 @@
 import Image from "next/image";
-import type { ComponentProps } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PERSONAL_DATA } from "@/data/personal";
-import { cn } from "@/lib/utils";
 
-export function AvatarComponent({
-  className,
-  ...props
-}: ComponentProps<typeof Avatar>) {
+export function AvatarComponent() {
   return (
-    <Avatar className={cn("rounded-2xl", className)} {...props}>
+    <Avatar className="size-36 rounded-2xl">
       <AvatarImage
         loading="lazy"
         src={PERSONAL_DATA.avatar}
@@ -24,7 +19,7 @@ export function AvatarComponent({
           height={300}
           placeholder="blur"
           blurDataURL="e6EfTi00~qM{_3_3-;xu4n9F00M{j[IUM{~qD%9F-;xu%MofRjxuD%"
-          className="size-full object-cover"
+          className="aspect-square size-full object-cover"
           priority
         />
       </AvatarFallback>

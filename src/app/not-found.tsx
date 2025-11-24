@@ -5,7 +5,6 @@ export default function NotFound() {
     <ErrorPage
       status={404}
       message="Hmm, we looked everywhere — but that page isn’t here."
-      btn="Go Home"
     />
   );
 }

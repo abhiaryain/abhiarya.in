@@ -1,4 +1,5 @@
 import type { Icons } from "@/components/icons";
+import type { Tag } from "@/types";
 
 export type Experience = {
   company: string;
@@ -17,7 +18,7 @@ export type Experience = {
   startDate: string;
   endDate: string;
   url: string;
-  github: string | null;
+  links: Tag[];
   icon: Icons;
   featured: boolean;
 };
@@ -31,7 +32,13 @@ export const EXPERIENCE_DATA = [
     startDate: "Oct 2023",
     endDate: "Sep 2024",
     url: "https://mithilastack.com",
-    github: "https://github.com/mithilastack",
+    links: [
+      {
+        name: "Github",
+        icon: "github",
+        url: "https://github.com/mithilastack",
+      },
+    ],
     icon: "mithila",
     featured: true,
   },
@@ -43,8 +50,8 @@ export const EXPERIENCE_DATA = [
     startDate: "Jun 2023",
     endDate: "Sep 2023",
     url: "https://aaensa.com",
-    github: null,
+    links: [],
     icon: "aaensa",
-    featured: true,
+    featured: false,
   },
 ] as const satisfies readonly Experience[];

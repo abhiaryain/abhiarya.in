@@ -16,11 +16,7 @@ export function About() {
         </FadeItem>
       </SectionHeader>
       <SectionContent>
-        <FadeItem>
-          <p className="font-mono text-muted-foreground text-sm leading-6">
-            {PERSONAL_DATA.about}
-          </p>
-        </FadeItem>
+        <FadeItem>{PERSONAL_DATA.about}</FadeItem>
       </SectionContent>
     </Section>
   );

@@ -6,7 +6,7 @@ export type Project = {
   description: string;
   url: string;
   icon: Icons;
-  github: string;
+  links: Tag[];
   tags: readonly Tag[];
   featured: boolean;
 };
@@ -18,7 +18,18 @@ export const PROJECT_DATA = [
       "A unified AI powerhouse for creation, design, and automation — transforming ideas into polished results within seconds.",
     url: "https://currunt.in",
     icon: "currunt",
-    github: "https://github.com/curruntin/currunt",
+    links: [
+      {
+        name: "Github",
+        url: "https://github.com/curruntin/currunt",
+        icon: "github",
+      },
+      {
+        name: "Website",
+        url: "https://currunt.in",
+        icon: "link",
+      },
+    ],
     tags: [
       { name: "Next", icon: "next", url: "https://nextjs.org" },
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },
@@ -34,7 +45,18 @@ export const PROJECT_DATA = [
       "Learnings is a collection of tutorials and blog posts, designed to capture my ongoing learning journey and share practical insights with others.",
     url: "https://learnings.abhiarya.in",
     icon: "learnings",
-    github: "https://github.com/abhiaryain/learnings",
+    links: [
+      {
+        name: "Github",
+        url: "https://github.com/abhiaryain/learnings",
+        icon: "github",
+      },
+      {
+        name: "Learnings",
+        url: "https://learnings.abhiarya.in",
+        icon: "link",
+      },
+    ],
     tags: [
       { name: "Next", icon: "next", url: "https://nextjs.org" },
       { name: "TailwindCSS", icon: "tailwind", url: "https://tailwindcss.com" },

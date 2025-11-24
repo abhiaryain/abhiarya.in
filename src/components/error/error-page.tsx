@@ -1,18 +1,17 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { FadeItem } from "@/components/ui-custom/fade";
 import { cn } from "@/lib/utils";
-import { Fade, FadeItem } from "../ui-custom/fade";
 
 type ErrorProps = {
   status: number;
   message: string;
-  btn: string;
 };
 
-export function ErrorPage({ status, message, btn }: ErrorProps) {
+export function ErrorPage({ status, message }: ErrorProps) {
   return (
-    <Fade
+    <div
       className={cn(
         "flex flex-col items-center justify-center p-4",
         "min-h-[calc(100vh-2rem)] w-full sm:min-h-[calc(100vh-8rem)]",
@@ -36,17 +35,16 @@ export function ErrorPage({ status, message, btn }: ErrorProps) {
         <Button
           asChild
           className={cn(
-            "flex items-center justify-center gap-2",
             "bg-accent hover:bg-accent/80",
             "text-accent-foreground",
           )}
           aria-label="go-to-home"
         >
           <Link href="/">
-            {btn} <ArrowRight />
+            Go Home <ArrowRight />
           </Link>
         </Button>
       </FadeItem>
-    </Fade>
+    </div>
   );
 }
