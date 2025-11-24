@@ -27,7 +27,7 @@ export function PullRequestCard({
     <FadeItem>
       <Card>
         <CardContent>
-          <GitMerge className="size-8 self-center text-violet-500 dark:text-violet-400" />
+          <GitMerge className="size-8 shrink-0 self-center text-violet-500 dark:text-violet-400" />
           <CardLayerGroup>
             <CardLayer className="justify-start">
               <CardTitle className="overflow-hidden">
