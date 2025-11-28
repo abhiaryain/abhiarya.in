@@ -20,64 +20,53 @@ export function PullRequestCard({
   additions,
   number,
   mergedAt,
-  author,
   repository,
 }: PullRequest) {
   return (
     <FadeItem>
       <Card>
         <CardContent>
-          <GitMerge className="size-8 self-center text-violet-500 dark:text-violet-400" />
+          <GitMerge className="size-8 shrink-0 self-center text-violet-500 dark:text-violet-400" />
           <CardLayerGroup>
-            <CardLayer className="justify-start">
+            <CardLayer>
               <CardTitle className="overflow-hidden">
                 <CardLink
-                  href={repository.url}
-                  className="truncate text-muted-foreground"
-                  onClick={() =>
-                    track(`open_source_pr_${repository.nameWithOwner}_clicked`)
-                  }
-                >
-                  {repository.nameWithOwner}
-                </CardLink>
-                <CardLink
                   href={url}
+                  target="_blank"
+                  rel="noopener"
                   className="truncate"
-                  onClick={() =>
-                    track(
-                      `open_source_pr_#${number}_${repository.nameWithOwner}_clicked`,
-                    )
-                  }
+                  onClick={() => track(`open_source_pr_${title}_clicked`)}
                 >
                   {title}
                 </CardLink>
+              </CardTitle>
+              <CardTitle className="text-muted-foreground text-xs">
+                {formatDistanceToNow(new Date(mergedAt), {
+                  addSuffix: true,
+                }).replace(/^about\s/, "")}
               </CardTitle>
             </CardLayer>
             <CardLayer className="p-0">
               <CardDescription className="truncate whitespace-nowrap p-0.5 text-xs">
                 <CardLink
-                  href={url}
+                  href={repository.url}
+                  target="_blank"
+                  rel="noopener"
                   className="inline"
                   onClick={() =>
-                    track(
-                      `open_source_pr_#${number}_${repository.nameWithOwner}_clicked`,
-                    )
+                    track(`open_source_pr_${repository.nameWithOwner}_clicked`)
                   }
+                >
+                  {repository.nameWithOwner.replace("/", " / ")}
+                </CardLink>
+                {" / "}
+                <CardLink
+                  href={url}
+                  className="inline"
+                  onClick={() => track(`open_source_pr_${number}_clicked`)}
                 >
                   {`#${number}`}
                 </CardLink>
-                {" by "}
-                <CardLink
-                  href={author.url}
-                  className="inline"
-                  onClick={() => track(`open_source_${author.login}_clicked`)}
-                >
-                  {author.login}
-                </CardLink>
-                {" was merged "}
-                {formatDistanceToNow(new Date(mergedAt), {
-                  addSuffix: true,
-                })}
               </CardDescription>
               <CardDescription className="flex items-center justify-between gap-1 whitespace-nowrap font-semibold text-xs">
                 <span className="text-green-700 dark:text-green-500">{`+${additions}`}</span>
