@@ -6,6 +6,7 @@ export type Project = {
   description: string;
   url: string;
   icon: Icons;
+  preview: string;
   links: Tag[];
   tags: readonly Tag[];
   featured: boolean;
@@ -18,6 +19,7 @@ export const PROJECT_DATA = [
       "A unified AI powerhouse for creation, design, and automation — transforming ideas into polished results within seconds.",
     url: "https://currunt.in",
     icon: "currunt",
+    preview: "/avatar.webp",
     links: [
       {
         name: "Github",
@@ -45,6 +47,7 @@ export const PROJECT_DATA = [
       "Learnings is a collection of tutorials and blog posts, designed to capture my ongoing learning journey and share practical insights with others.",
     url: "https://learnings.abhiarya.in",
     icon: "learnings",
+    preview: "/avatar.webp",
     links: [
       {
         name: "Github",

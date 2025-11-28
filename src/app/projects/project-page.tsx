@@ -55,6 +55,7 @@ export function ProjectsPage() {
               name={project.name}
               description={project.description}
               url={project.url}
+              preview={project.preview}
               icon={project.icon}
               links={project.links}
               tags={project.tags}

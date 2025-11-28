@@ -41,6 +41,7 @@ export function Projects() {
             description={project.description}
             url={project.url}
             icon={project.icon}
+            preview={project.preview}
             links={project.links}
             tags={project.tags}
             featured={project.featured}
