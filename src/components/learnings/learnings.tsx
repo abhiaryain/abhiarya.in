@@ -26,6 +26,7 @@ export function Learnings() {
               onClick={() => track("learnings_more_clicked")}
             >
               See More
+              <span className="sr-only">Recent Learnings</span>
             </SectionLink>
           </SectionTitle>
         </FadeItem>
