@@ -26,9 +26,9 @@ query {
 
 function getLevel(count: number) {
   if (count === 0) return 0;
-  if (count <= 5) return 1;
-  if (count <= 10) return 2;
-  if (count <= 20) return 3;
+  if (count <= 3) return 1;
+  if (count <= 5) return 2;
+  if (count <= 8) return 3;
   return 4;
 }
 

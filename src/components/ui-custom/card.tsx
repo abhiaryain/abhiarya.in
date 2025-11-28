@@ -45,7 +45,7 @@ export function CardContent({
   return (
     <div
       data-slot="card-content"
-      className={cn("flex flex-row gap-2", className)}
+      className={cn("flex flex-row items-center gap-2", className)}
       {...props}
     >
       {children}

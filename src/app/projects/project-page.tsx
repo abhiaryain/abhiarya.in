@@ -48,20 +48,23 @@ export function ProjectsPage() {
             All Projects
           </h1>
         </FadeItem>
-        <div className="space-y-3 py-4">
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {PROJECT_DATA.map((project) => (
             <ProjectCard
               key={project.name}
               name={project.name}
               description={project.description}
-              icon={project.icon}
               url={project.url}
-              tags={project.tags}
+              icon={project.icon}
+              preview={project.preview}
               links={project.links}
+              tags={project.tags}
               featured={project.featured}
             />
           ))}
         </div>
+
         <Contact />
         <Footer />
       </div>

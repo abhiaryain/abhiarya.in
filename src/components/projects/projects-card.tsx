@@ -1,6 +1,7 @@
 "use client";
 
 import { track } from "@vercel/analytics";
+import Image from "next/image";
 import { icons } from "@/components/icons";
 import { TagList } from "@/components/tag-list/tag-list";
 import {
@@ -8,6 +9,7 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
+  CardHeader,
   CardIcon,
   CardLayer,
   CardLayerGroup,
@@ -19,20 +21,27 @@ import type { Project } from "@/data/projects";
 
 export function ProjectCard({
   name,
-  icon,
   description,
-  links,
   url,
+  icon,
+  preview,
+  links,
   tags,
 }: Project) {
   return (
-    <FadeItem>
+    <FadeItem className="space-y-4">
       <Card>
-        <CardContent>
-          <CardIcon
-            icon={icon}
-            className="mt-1 size-10 text-muted-foreground"
+        <CardHeader className="overflow-hidden rounded-md p-0">
+          <Image
+            src={preview}
+            width={64}
+            height={64}
+            alt={name}
+            className="aspect-video w-full shrink-0 transition-all group-hover:scale-105 group-hover:saturate-100 sm:saturate-0"
           />
+        </CardHeader>
+        <CardContent className="gap-0.5 px-2">
+          <CardIcon icon={icon} className="size-5" />
           <CardLayerGroup>
             <CardLayer>
               <CardTitle className="overflow-hidden">
@@ -62,14 +71,14 @@ export function ProjectCard({
                 })}
               </CardTitle>
             </CardLayer>
-            <CardLayer className="py-0">
-              <CardDescription className="line-clamp-2">
-                {description}
-              </CardDescription>
-            </CardLayer>
           </CardLayerGroup>
         </CardContent>
-        <CardFooter className="p-2">
+        <CardFooter className="p-2 pt-0">
+          <CardLayer>
+            <CardDescription className="line-clamp-3">
+              {description}
+            </CardDescription>
+          </CardLayer>
           <TagList tags={tags} project />
         </CardFooter>
       </Card>
