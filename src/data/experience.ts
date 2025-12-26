@@ -44,7 +44,7 @@ export const EXPERIENCE_DATA = [
   },
   {
     company: "Aaensa Tech",
-    position: "Software Development Engineer",
+    position: "Software Development Engineer Intern",
     shortPosition: "SDE",
     location: "Gurugram",
     startDate: "Jun 2023",

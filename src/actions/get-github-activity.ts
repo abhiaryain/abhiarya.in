@@ -35,7 +35,7 @@ function getLevel(count: number) {
 export async function getGithubActivity(): Promise<ActionsReturn<Activity[]>> {
   const res = await fetch("https://api.github.com/graphql", {
     cache: "force-cache",
-    next: { revalidate: 5 * 60 }, // 5 minutes
+    next: { revalidate: 60 * 60 }, // 1 hours
     method: "POST",
     body: JSON.stringify({
       query,

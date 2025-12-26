@@ -3,8 +3,6 @@ description: Report a bug to help us improve
 title: "[Bug]: "
 labels: ["bug"]
 assignees: abhiaryain
-projects:
-  - abhiarya.in
 body:
   - type: markdown
     attributes:

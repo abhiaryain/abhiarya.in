@@ -28,6 +28,7 @@ export function Projects() {
               target="_self"
             >
               See More
+              <span className="sr-only">All Projects</span>
             </SectionLink>
           </SectionTitle>
         </FadeItem>
