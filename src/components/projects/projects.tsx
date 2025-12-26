@@ -28,6 +28,7 @@ export function Projects() {
               target="_self"
             >
               See More
+              <span className="sr-only">All Projects</span>
             </SectionLink>
           </SectionTitle>
         </FadeItem>
@@ -38,10 +39,10 @@ export function Projects() {
             key={project.name}
             name={project.name}
             description={project.description}
-            icon={project.icon}
             url={project.url}
-            tags={project.tags}
+            icon={project.icon}
             links={project.links}
+            tags={project.tags}
             featured={project.featured}
           />
         ))}

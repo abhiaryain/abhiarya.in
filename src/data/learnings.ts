@@ -14,7 +14,7 @@ export const LEARNINGS_DATA: LEARNINGS[] = [
     description:
       "An operating system is a software that manages computer hardware and software.",
     date: "Oct 2023",
-    url: "https://mithilastack.com",
+    url: "https://learnings.abhiarya.in/what-is-operating-system",
     icon: "kafka",
   },
 ];

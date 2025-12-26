@@ -1,16 +1,15 @@
 import type { MetadataRoute } from "next";
 import { PERSONAL_DATA } from "@/data/personal";
-import { getDomain } from "@/lib/domain";
+import { getBaseURL } from "@/lib/base-url";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const domain = await getDomain();
+  const baseURL = await getBaseURL();
 
-  const url = new URL(domain);
   const routes = ["", "/projects"].map((route) => ({
-    url: `${url}${route}`,
+    url: `${baseURL}${route}`,
     lastModified: new Date(),
     changeFrequency: "daily",
-    images: [`${domain}/${PERSONAL_DATA.image}`],
+    images: [`${baseURL}${PERSONAL_DATA.image}`],
   })) as MetadataRoute.Sitemap;
 
   return routes;

@@ -19,10 +19,10 @@ import type { Project } from "@/data/projects";
 
 export function ProjectCard({
   name,
-  icon,
   description,
-  links,
   url,
+  icon,
+  links,
   tags,
 }: Project) {
   return (

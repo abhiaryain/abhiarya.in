@@ -35,6 +35,7 @@ export function OpenSource({
               onClick={() => track("see_all_open_source_pull_requests_clicked")}
             >
               See More
+              <span className="sr-only">All Open Source Pull Requests</span>
             </SectionLink>
           </SectionTitle>
         </FadeItem>
