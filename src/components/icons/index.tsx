@@ -679,6 +679,4 @@ export const icons = {
   link: Link2,
 };
 
-console.log(Object.keys(icons).length);
-
 export type Icons = keyof typeof icons;

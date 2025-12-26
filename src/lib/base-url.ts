@@ -2,10 +2,10 @@ import "server-only";
 
 import { headers } from "next/headers";
 
-export async function getDomain() {
+export async function getBaseURL() {
   const headersList = await headers();
   const host = headersList.get("host");
   const protocol = headersList.get("x-forwarded-proto") || "http";
-  const domain = `${protocol}://${host}`;
-  return domain;
+  const baseURL = `${protocol}://${host}`;
+  return baseURL;
 }

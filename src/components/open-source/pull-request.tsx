@@ -24,7 +24,7 @@ export function PullRequestComponent({
 
       {data &&
         data.length > 0 &&
-        data?.map((pr) => (
+        data.map((pr) => (
           <PullRequestCard
             key={pr.id}
             id={pr.id}

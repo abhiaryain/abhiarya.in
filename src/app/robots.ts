@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { getDomain } from "@/lib/domain";
+import { getBaseURL } from "@/lib/base-url";
 
 export default async function robots(): Promise<MetadataRoute.Robots> {
-  const domain = await getDomain();
+  const baseURL = await getBaseURL();
 
   return {
     rules: [
@@ -11,6 +11,6 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
         crawlDelay: 60 * 60 * 24, // 1 day
       },
     ],
-    sitemap: `${domain}/sitemap.xml`,
+    sitemap: `${baseURL}/sitemap.xml`,
   };
 }
