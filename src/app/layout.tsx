@@ -12,7 +12,7 @@ import { EXPERIENCE_DATA } from "@/data/experience";
 import { PERSONAL_DATA } from "@/data/personal";
 import { PROJECT_DATA } from "@/data/projects";
 import { SOCIAL_DATA } from "@/data/social";
-import { getDomain } from "@/lib/domain";
+import { getBaseURL } from "@/lib/base-url";
 import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
@@ -27,10 +27,10 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   // We can use `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}` to get the production URL of the project on Vercel
-  const domain = await getDomain();
+  const baseURL = await getBaseURL();
 
   return {
-    metadataBase: new URL(domain),
+    metadataBase: new URL(baseURL),
     title: {
       default: PERSONAL_DATA.nickname,
       template: `%s | ${PERSONAL_DATA.nickname}`,
@@ -38,8 +38,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description: PERSONAL_DATA.summary,
     applicationName: PERSONAL_DATA.nickname,
     authors: [
-      { name: PERSONAL_DATA.nickname, url: new URL(domain) },
-      { name: PERSONAL_DATA.name, url: new URL(domain) },
+      { name: PERSONAL_DATA.nickname, url: new URL(baseURL) },
+      { name: PERSONAL_DATA.name, url: new URL(baseURL) },
     ],
     keywords: Array.from(
       new Set([
@@ -64,7 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
     creator: PERSONAL_DATA.nickname,
     publisher: PERSONAL_DATA.nickname,
     openGraph: {
-      url: new URL(domain),
+      url: new URL(baseURL),
       siteName: PERSONAL_DATA.nickname,
       // TODO: Add og:video support
       type: "website",

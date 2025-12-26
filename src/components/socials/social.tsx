@@ -35,7 +35,6 @@ export function Social() {
                     "whitespace-nowrap font-medium text-sm",
                     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
                     "[&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0",
-
                     social.withText ? "px-2" : "size-8",
                   )}
                   onClick={() => track(`social_${social.name}_clicked`)}
